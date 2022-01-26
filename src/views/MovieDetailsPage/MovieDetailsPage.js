@@ -19,8 +19,12 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   function handleGoBack() {
-    // navigate(-1);
-    navigate('/');
+    navigate(-1);
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+    // navigate('/');
   }
 
   return (

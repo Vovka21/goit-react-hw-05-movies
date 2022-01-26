@@ -38,7 +38,8 @@ const MoviesPage = () => {
         setMovies(prev => [...prev, ...results]);
         setLoading(true);
         if (currentPage !== 1) {
-          scrollOnLoadButton();
+          // scrollOnLoadButton();
+          console.log('down');
         }
       } catch (error) {
         setError(error);
