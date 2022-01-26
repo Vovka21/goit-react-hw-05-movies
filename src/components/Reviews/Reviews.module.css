@@ -1,0 +1,45 @@
+.list {
+  padding-inline-start: 0px;
+}
+
+.listItem {
+  background-color: rgba(253, 249, 34, 0.3);
+  display: flex;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 10px;
+
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.listItem:after {
+  content: '';
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 1.2em;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 100%);
+  pointer-events: none;
+}
+
+.user {
+  display: flex;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  border-right: 1px solid black;
+}
+
+div {
+  margin: 5px;
+}
+
+p {
+  margin: 0;
+}

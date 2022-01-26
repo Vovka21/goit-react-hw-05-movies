@@ -1,0 +1,14 @@
+li {
+  list-style: none;
+}
+
+.title {
+  text-align: left;
+  margin-left: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  font-size: 18px;
+}

@@ -1,0 +1,22 @@
+.active {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: red;
+  font-size: 18px;
+}
+
+.noActive {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  color: blue;
+  font-size: 18px;
+}
+
+.header {
+  background-color: rgb(135, 161, 2);
+  padding-left: 20px;
+}
