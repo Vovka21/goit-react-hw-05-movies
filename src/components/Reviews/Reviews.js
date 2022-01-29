@@ -6,9 +6,12 @@ import styles from './Reviews.module.css';
 function Reviews() {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    MoviesAPI.fetchReviews(movieId).then(({ results }) => setReviews(results));
+    MoviesAPI.fetchReviews(movieId)
+      .then(({ results }) => setReviews(results))
+      .catch(error => setError(error));
   }, [movieId]);
 
   return (

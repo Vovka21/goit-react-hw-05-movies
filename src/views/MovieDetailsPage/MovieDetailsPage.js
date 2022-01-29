@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import MovieNavigation from '../../components/MovieNavigation/MovieNavigation';
 import GoBackButton from '../../components/GoBackButton/GoBackButton';
 import * as MoviesAPI from '../../services/MoviesAPI';
@@ -8,23 +8,21 @@ import PropTypes from 'prop-types';
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+  // const [error, setError] = useState(null);
 
   const [movie, setMovie] = useState({});
 
   useEffect(() => {
     MoviesAPI.fetchMovieById(movieId).then(data => {
       setMovie(data);
+      // .catch(error => setError(error));
     });
   }, [movieId]);
 
   function handleGoBack() {
-    navigate(-1);
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
-    // navigate('/');
+    navigate(location?.state?.from ?? '/');
   }
 
   return (

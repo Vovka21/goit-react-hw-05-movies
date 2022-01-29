@@ -6,7 +6,7 @@ export const Layout = () => {
     <div>
       <nav className="header">
         <NavLink
-          exact="true"
+          // exact="true"
           className={navData => (navData.isActive ? 'active' : 'noActive')}
           to="/"
         >

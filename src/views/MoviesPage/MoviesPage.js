@@ -18,6 +18,7 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
 
   const [error, setError] = useState(null);
+
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -63,12 +64,12 @@ const MoviesPage = () => {
     });
   };
 
-  const scrollOnLoadButton = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
-  };
+  // const scrollOnLoadButton = () => {
+  //   window.scrollTo({
+  //     top: document.documentElement.scrollHeight,
+  //     behavior: 'smooth',
+  //   });
+  // };
 
   const handleLoadMore = () => {
     setCurrentPage(prevState => prevState + 1);

@@ -5,11 +5,14 @@ import MovieList from '../../components/MovieList/MovieList';
 import styles from './HomePage.module.css';
 
 export default function HomePage() {
-  const [movies, setMovies] = useState([]);
   const location = useLocation();
+  const [movies, setMovies] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    MoviesAPI.fetchMovies().then(data => setMovies(data.results));
+    MoviesAPI.fetchMovies()
+      .then(data => setMovies(data.results))
+      .catch(error => setError(error));
   }, []);
 
   return (

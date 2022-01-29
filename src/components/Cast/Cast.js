@@ -6,9 +6,12 @@ import styles from './Cast.module.css';
 const Cast = () => {
   const [credits, setCredits] = useState([]);
   const { movieId } = useParams();
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    MoviesAPI.fetchCast(movieId).then(({ cast }) => setCredits(cast));
+    MoviesAPI.fetchCast(movieId)
+      .then(({ cast }) => setCredits(cast))
+      .catch(error => setError(error));
   }, [movieId]);
 
   return (

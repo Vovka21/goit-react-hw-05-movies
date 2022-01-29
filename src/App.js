@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate, Redirect } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { Layout } from './components/Navigation/Layout';
 import Loader from './components/Loader/Loader';
@@ -20,7 +20,7 @@ const Reviews = lazy(() => import('./components/Reviews/Reviews'));
 export default function App() {
   return (
     <>
-      <Suspense fallback={Loader}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" index element={<HomePage />} />
@@ -29,7 +29,7 @@ export default function App() {
               <Route path="cast" element={<Cast />} />
               <Route path="reviews" element={<Reviews />} />
             </Route>
-            <Route path="*" element={<HomePage />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Route>
         </Routes>
       </Suspense>
